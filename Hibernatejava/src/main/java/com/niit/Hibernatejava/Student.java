@@ -6,15 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
-@Entity(name = "student_table")
-
+//@Entity(name = "student_table")
+@Entity
+//@Table(name="student_table")
 public class Student {
 	@Id
 	int _id;
-	@Transient
+	//@Transient
 	String name;
-	@Column(name = "trimester")
+	//@Column(name = "trimester")
 	int semester;
 	int average;
 
@@ -49,6 +51,11 @@ public class Student {
 	}
 	public void setAverage(int average) {
 		this.average = average;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\n"+_id+"\t"+name+"\t"+semester+"\t"+average;
 	}
 
 
